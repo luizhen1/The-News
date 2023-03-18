@@ -1,0 +1,78 @@
+<%- include('partials/header.html') %>
+
+<section class="noticia">
+    <div class="center">
+        <div class="noticia-single">
+            <h2><%= noticia.titulo %></h2>
+            <div class="autor-nome">
+                <span>Por <%= noticia.autor %></span>
+            </div>
+            <br/>
+            <div><img style="max-width: 100%;" src="<%- noticia.imagem %>" /></div>
+            <br/>
+            <p><%- noticia.conteudo %></p>
+            <p><%- noticia.conteudo2 %></p>
+
+
+            <div><img style="max-width: 100%;margin-top: 25px;" src="<%- noticia.imagem2 %>" /></div>
+            <div class="passiva">
+                <h2><%= noticia.titulopassiva %></h2>
+                <p><%= noticia.passiva %></p>
+            </div>
+
+
+            <div><img style="max-width: 100%;margin-top: 25px;" src="<%- noticia.imagem3 %>" /></div>
+            <div class="q">
+                <h2><%= noticia.tituloq %></h2>
+                <p><%= noticia.q %></p>
+            </div>
+
+            <div><img style="max-width: 100%;margin-top: 25px;" src="<%- noticia.imagem4 %>" /></div>
+            <div class="w">
+                <h2><%= noticia.titulow %></h2>
+                <p><%= noticia.w %></p> 
+            </div>
+
+            <div><img style="max-width: 100%;margin-top: 25px;" src="<%- noticia.imagem5 %>" /></div>
+            <div class="e">
+                <h2><%= noticia.tituloe %></h2>
+                <p><%= noticia.e %></p>
+            </div>
+
+            <div><img style="max-width: 100%;margin-top: 25px;" src="<%- noticia.imagem6 %>" /></div>
+            <div class="r">
+                <h2><%= noticia.titulor %></h2>
+                <p><%= noticia.r %></p>
+            </div>
+
+            
+
+        </div>
+        
+        <div class="mais-lidas">
+            <h3>Mais lidas</h3>
+            <div class="mais-lidas-noticias">
+                <% for(let i = 0; i < postsTop.length; i++) { %>
+                <div class="mais-lidas-noticias-single">
+                    <img src="<%= postsTop[i].imagem %>" />
+                    <div class="texto-mais-lida-single">
+                        <h4><%= postsTop[i].titulo %></h4>
+                        <p><%- postsTop[i].descricaoCurta %>... <span style="font-size: 14px;font-weight: bold;">(<%= postsTop[i].views %> views)</span></p>
+                        <a href="<%= postsTop[i].slug %>">Saiba Mais</a>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+
+        
+
+
+    </div>
+
+</section>
+
+<%- include('partials/footer.html') %>
+
+</body>
+</html>
