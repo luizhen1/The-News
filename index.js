@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const mongoose = require('mongoose');
 const fileupload = require('express-fileupload');
 var bodyParser = require('body-parser');
@@ -11,12 +12,12 @@ const app = express();
 
 const Posts = require('./Posts.js');
 
-var session = require('express-session');
 
-mongoose.connect('mongodb+srv://Luiz:tCFdXsd7WG5yhmdE@cluster0.46okvbz.mongodb.net/Alura?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology: true}).then(function(){
-    console.log('Conectado com sucesso');
+
+mongoose.connect('mongodb+srv://Luiz:IDo9z7j1f29g8roF@cluster0.46okvbz.mongodb.net/Alura?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology: true}).then(function(){
+    console.log('Conectando com sucesso');
 }).catch(function(err){
-    console.log(err.massage);
+    console.log(err.message);
 })
 
 app.use( bodyParser.json() );    // to support JSON-encoded bodies
